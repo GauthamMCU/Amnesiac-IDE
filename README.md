@@ -58,13 +58,13 @@ For Software:
 
 **Screenshots**
 
-![Initial Concept Prompt](https://github.com/user-attachments/assets/REPLACE-WITH-CONCEPT-LINK)
+![Initial Concept Prompt](assets/concept.jpeg)
 *Initial brainstorm and project ideation on Gemini, defining the core "Run and Vanish" concept and architecture.*
 
-![Amnesiac IDE Interface](https://github.com/user-attachments/assets/REPLACE-WITH-APP-INTERFACE-LINK)
+![Amnesiac IDE Interface](assets/app-interface.jpeg)
 *The running web application interface showing "Hello, World!" in the Output Console after Run Code was pressed, with the editor buffer cleared.*
 
-![Backend Implementation in VS Code](https://github.com/user-attachments/assets/REPLACE-WITH-BACKEND-CODE-LINK)
+![Backend Implementation in VS Code](assets/backend-code.jpeg)
 *VS Code workspace showing the Flask backend (`project.py`) executing code securely via subprocess and serving the app on port 8000.*
 
 ---
