@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&amp;family=jetbrainsMono:wght@100..900&amp;display=swap" rel="stylesheet">
+    <style>
+        @layer base {
+            html, body { margin: 0; padding: 0; }
+            body { overscroll-behavior: none; }
+            main > :first-child { margin-top: 0 !important; }
+            main > :last-child { margin-bottom: 0 !important; }
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- MONACO AMD LOADER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.38.0/min/vs/loader.min.js"></script>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            "darkMode": "class",
+            "theme": {
+                "extend": {
+                    "colors": {
+                        "inverse-surface": "#dfe2eb", "inverse-primary": "#b91a24", "on-primary-fixed": "#410004", "tertiary-fixed": "#c4e7ff", "on-tertiary": "#00354a", "on-error": "#690005", "inverse-on-surface": "#2d3137", "surface-tint": "#ffb3ad", "background": "#10141a", "surface-container-highest": "#31353c", "secondary-container": "#00a572", "surface-container": "#1c2026", "outline-variant": "#5b403e", "tertiary-fixed-dim": "#7bd0ff", "on-secondary-fixed-variant": "#005236", "on-secondary": "#003824", "on-tertiary-fixed": "#001e2c", "on-primary-container": "#5c0008", "on-primary": "#68000a", "secondary": "#4edea3", "primary": "#ffb3ad", "surface-container-high": "#262a31", "error": "#ffb4ab", "secondary-fixed-dim": "#4edea3", "tertiary-container": "#009bd1", "on-background": "#dfe2eb", "on-secondary-fixed": "#002113", "primary-container": "#ff5451", "error-container": "#93000a", "surface-dim": "#10141a", "on-tertiary-fixed-variant": "#004c69", "tertiary": "#7bd0ff", "surface-bright": "#353940", "on-surface": "#dfe2eb", "surface-container-lowest": "#0a0e14", "on-surface-variant": "#e4beba", "surface": "#10141a", "on-primary-fixed-variant": "#930013", "primary-fixed-dim": "#ffb3ad", "primary-fixed": "#ffdad7", "on-error-container": "#ffdad6", "outline": "#ab8986", "on-tertiary-container": "#002d40", "on-secondary-container": "#00311f", "secondary-fixed": "#6ffbbe", "surface-variant": "#31353c", "surface-container-low": "#181c22"
+                    },
+                    "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                    "spacing": { "space-1": "2px", "space-16": "32px", "space-2": "4px", "tab-height": "36px", "gutter-editor": "12px", "sidebar-width": "260px", "space-12": "24px", "space-3": "6px", "space-10": "20px", "space-4": "8px", "space-6": "12px", "rail-width": "48px", "space-8": "16px", "status-height": "24px", "space-0": "0px" },
+                    "fontFamily": { "headline-md": ["geist"], "body-sm": ["geist"], "label-md": ["jetbrainsMono"], "headline-lg": ["geist"], "label-sm": ["jetbrainsMono"], "code-sm": ["jetbrainsMono"], "headline-xl": ["geist"], "body-lg": ["geist"], "code-lg": ["jetbrainsMono"], "code-md": ["jetbrainsMono"], "body-md": ["geist"], "body": ["geist"], "headline": ["geist"] },
+                    "fontSize": { "headline-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.005em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "code-lg": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "code-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }] }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+    <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-low/90 backdrop-blur-md">
+        <div class="h-12 w-full px-space-4 flex items-center justify-between">
+            <div class="flex items-center gap-space-4">
+                <img alt="Amnesiac IDE Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U0W-t8crpXi7UsqDG6l0YsvdJS2iAuscDKf5c-CKPh5bFNW-KA-mXpj_uc7uTo6UgYt1fGHZ-MnH5GhV_PaQmY5Ow5LmYYOcoLB9hmpsm4FKRnfws7veqEl6r6L9R4jBH6Py8IAMa9RsoQIS9qIf3o4dEEG-2dCQqV5wb2NhaSXSFe2PPZLIncMi-4SJzB-DAPsI_Or4gy7CYnapAU37SxJO522wQnlOv777RQTTDeObHRIrmR5VUJZco">
+                <span class="font-headline-md text-headline-md tracking-tight text-on-surface">Amnesiac IDE</span>
+                <div class="h-4 w-[1px] bg-surface-variant mx-space-2"></div>
+                <div class="flex items-center gap-space-2 font-code-sm text-code-sm text-on-surface-variant">
+                    <span class="hover:text-on-surface cursor-pointer">project</span>
+                    <span class="text-outline">/</span>
+                    <span class="text-primary hover:underline cursor-pointer">main.py</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-space-3">
+                <div class="flex items-center gap-space-2 px-space-3 py-space-1 rounded bg-surface-container font-label-sm text-label-sm border border-surface-variant">
+                    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                    <span class="text-on-surface">Python 3.11</span>
+                    <span class="text-outline">|</span>
+                    <span class="text-on-surface-variant">Sandboxed Execution</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-space-3">
+                <div class="flex items-center gap-space-2">
+                    <button onclick="runAndVanish()" class="flex items-center gap-space-2 px-space-3 py-space-1 rounded bg-tertiary-container text-on-tertiary-container font-label-md text-label-md hover:opacity-90 transition-opacity" type="button">
+                        <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+                        <span class="">Run Code</span>
+                    </button>
+                    <button class="flex items-center p-space-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Terminal Drawer" type="button">
+                        <span class="material-symbols-outlined text-[18px]">terminal</span>
+                    </button>
+                    <button class="flex items-center p-space-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Split View" type="button">
+                        <span class="material-symbols-outlined text-[18px]">splitscreen</span>
+                    </button>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <aside class="fixed left-0 top-12 bottom-0 w-sidebar-width bg-surface-container-low z-40 flex flex-col">
+        <div class="px-space-4 py-space-3 flex items-center justify-between">
+            <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Project Navigator</span>
+            <div class="flex items-center gap-space-1 text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] cursor-pointer hover:text-on-surface">note_add</span>
+                <span class="material-symbols-outlined text-[16px] cursor-pointer hover:text-on-surface">create_new_folder</span>
+                <span class="material-symbols-outlined text-[16px] cursor-pointer hover:text-on-surface">refresh</span>
+            </div>
+        </div>
+        <nav class="flex-1 px-space-2 flex flex-col gap-space-1">
+            <a class="flex items-center gap-space-2 px-space-3 py-space-2 rounded bg-surface-container text-on-surface font-semibold" href="#"><span class="material-symbols-outlined text-[16px]">code</span><span>Editor</span></a>
+            <a class="flex items-center gap-space-2 px-space-3 py-space-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" href="#"><span class="material-symbols-outlined text-[16px]">bug_report</span><span>Debug &amp; Profiler</span></a>
+            <a class="flex items-center gap-space-2 px-space-3 py-space-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" href="#"><span class="material-symbols-outlined text-[16px]">inventory_2</span><span>Dependencies</span></a>
+            <a class="flex items-center gap-space-2 px-space-3 py-space-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" href="#"><span class="material-symbols-outlined text-[16px]">settings_input_component</span><span>Sandboxes</span></a>
+        </nav>
+        <div class="p-space-3 bg-surface-container-lowest flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+            <div class="flex items-center gap-space-2">
+                <span class="material-symbols-outlined text-[14px] text-primary">cloud_done</span>
+                <span>Memory: 42MB / 512MB</span>
+            </div>
+            <span class="material-symbols-outlined text-[16px] hover:text-on-surface cursor-pointer">tune</span>
+        </div>
+    </aside>
+
+    <div class="pl-sidebar-width">
+        <main class="relative pt-12 min-h-screen bg-background">
+            <div class="flex flex-col w-full min-w-0">
+                <div class="flex items-center justify-between bg-surface-container-low px-space-2 h-tab-height select-none">
+                    <div class="flex items-center h-full gap-space-1 overflow-x-auto">
+                        <div class="flex items-center gap-space-2 h-full px-space-3 bg-surface-container-lowest text-on-surface font-code-sm text-code-sm cursor-pointer shadow-sm relative group" id="tab-main-py">
+                            <span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                            <span class="material-symbols-outlined text-[15px] text-primary">code_blocks</span>
+                            <span class="font-medium tracking-tight">main.py</span>
+                            <button class="hidden group-hover:flex items-center justify-center w-4 h-4 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+                                <span class="material-symbols-outlined text-[12px]">close</span>
+                            </button>
+                            <span class="absolute top-0 left-0 right-0 h-[2px] bg-tertiary-container"></span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-space-2">
+                        <div class="flex items-center gap-space-1 bg-surface-container-lowest p-space-1 rounded">
+                            <button class="flex items-center gap-space-1 px-space-2 py-space-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" id="btn-format" type="button">
+                                <span class="material-symbols-outlined text-[15px]">auto_fix_high</span>
+                                <span class="hidden sm:inline">Format</span>
+                            </button>
+                            <button class="flex items-center gap-space-1 px-space-2 py-space-1 rounded text-on-surface-variant hover:text-error hover:bg-surface-container font-label-md text-label-md transition-colors" id="btn-clear-code" type="button">
+                                <span class="material-symbols-outlined text-[15px]">ink_eraser</span>
+                                <span class="hidden sm:inline">Clear</span>
+                            </button>
+                        </div>
+                        <button onclick="runAndVanish()" class="flex items-center gap-space-2 px-space-4 py-space-2 rounded bg-tertiary-container text-on-tertiary-container hover:bg-surface-container hover:text-tertiary font-label-md text-label-md transition-all shadow-md active:scale-95 select-none cursor-pointer" id="btn-run-code" type="button">
+                            <span class="material-symbols-outlined text-[17px] fill-current">play_arrow</span>
+                            <span class="font-semibold tracking-wide uppercase">Run Code</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MONACO EDITOR TARGET CONTAINER -->
+                <div class="relative flex flex-row w-full bg-surface-container-lowest font-code-md text-code-md overflow-hidden">
+                    <div id="editor-container" class="w-full h-[380px] min-h-[380px] bg-surface-container-lowest"></div>
+                </div>
+
+                <div class="flex items-center justify-between bg-surface-container-high px-space-4 py-space-1 cursor-row-resize select-none">
+                    <div class="flex items-center gap-space-3 font-label-sm text-label-sm">
+                        <span class="material-symbols-outlined text-[14px] text-on-surface-variant">drag_handle</span>
+                        <div class="flex items-center gap-space-2 px-space-2 py-0.5 rounded bg-surface-container-lowest">
+                            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                            <span class="text-on-surface font-medium">Console ready</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col bg-surface-container-lowest min-h-[300px] w-full">
+                    <div class="flex items-center justify-between px-space-4 bg-surface-container h-tab-height select-none">
+                        <div class="flex items-center gap-space-3 h-full">
+                            <div class="flex items-center gap-space-2 font-headline-md text-headline-md text-on-surface pr-space-3">
+                                <span class="material-symbols-outlined text-[18px] text-tertiary">terminal</span>
+                                <span class="tracking-tight text-[13px] font-semibold uppercase">Output Console</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-space-3">
+                            <button class="flex items-center gap-space-1 px-space-2 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" id="btn-clear-console" type="button">
+                                <span class="material-symbols-outlined text-[14px]">block</span>
+                                <span class="hidden sm:inline">Clear Output</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-space-4 font-code-sm text-code-sm leading-relaxed overflow-y-auto space-y-1 bg-surface-container-lowest font-mono select-text" id="output"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MONACO EDITOR INITIALIZATION SCRIPT (PLACED AT BOTTOM)    -->
+    <!-- ========================================================= -->
+    <script>
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.38.0/min/vs' }});
+        
+        require(['vs/editor/editor.main'], function() {
+            window.editor = monaco.editor.create(document.getElementById('editor-container'), {
+                value: `# Write your Python code here...\nprint("Hello, World!")`,
+                language: 'python',
+                theme: 'vs-dark',
+                automaticLayout: true,
+                fontSize: 13,
+                fontFamily: 'JetBrains Mono',
+                minimap: { enabled: true },
+                padding: { top: 16 }
+            });
+
+            // Dispatch ready event for external scripts if needed
+            document.dispatchEvent(new Event('monaco-ready'));
+        });
+    </script>
+
+    <!-- YOUR EXTERNAL SCRIPT FILE (Loads AFTER Monaco is configured) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
