@@ -1,4 +1,4 @@
-<img width="1280" height="640" alt="Amnesiac IDE banner" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
+<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
 # Amnesiac-IDE 🎯
 
@@ -34,11 +34,10 @@ For Software:
 
 For Software:
 
-**Installation**
-
+# Installation
 ```bash
 # Clone the repository
-git clone https://github.com/GauthamMCU/amnesiac-ide.git
+git clone [https://github.com/GauthamMCU/amnesiac-ide.git](https://github.com/GauthamMCU/amnesiac-ide.git)
 
 # Navigate into project directory
 cd amnesiac-ide
@@ -48,37 +47,37 @@ pip install flask
 
 # Run
 py project.py
-```
-
----
 
 ### Project Documentation
-
 For Software:
 
-**Screenshots**
+# Screenshots (Add at least 3)
 
-![Initial Concept Prompt](assets/concept.jpeg)
-*Initial brainstorm and project ideation on Gemini, defining the core "Run and Vanish" concept and architecture.*
+![Initial Concept Prompt](./assets/concept.png)
+*Initial brainstorm and project ideation defining the core "Run and Vanish" concept.*
 
-![Amnesiac IDE Interface](assets/app-interface.jpeg)
-*The running web application interface showing "Hello, World!" in the Output Console after Run Code was pressed, with the editor buffer cleared.*
+![Amnesiac IDE Interface](./assets/app-interface.png)
+*The running web application interface displaying the executed output in the console while the code editor buffer is automatically cleared.*
 
-![Backend Implementation in VS Code](assets/backend-code.jpeg)
-*VS Code workspace showing the Flask backend (`project.py`) executing code securely via subprocess and serving the app on port 8000.*
+![Backend Implementation in VS Code](./assets/backend-code.png)
+*VS Code workspace showing the Flask backend (`project.py`) executing code securely via subprocess and handling local development serving.*
 
----
+
 
 ### Project Demo
 
-**Video / Demonstration**
+# Video / Demonstration
 
-Demonstration of typing `print("you are great")` in the Monaco Editor interface, clicking **RUN CODE**, and watching the code buffer vanish instantly as the output renders directly to the console.
+![Amnesiac IDE Execution Demo](./assets/demo.mp4)
 
-https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-UPLOADED-VIDEO-LINK
+*Demonstration of typing `print("you are great")` in the Monaco Editor interface, clicking **RUN CODE**, and witnessing the code buffer vanish instantly as the output renders directly to the console.*
+
 
 ---
-Made with ❤️ at TinkerHub Useless Projects
+Made with ❤️ at TinkerHub Useless Projects 
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
+
+
+
